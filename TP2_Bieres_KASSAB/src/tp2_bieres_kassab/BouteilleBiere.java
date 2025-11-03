@@ -9,9 +9,30 @@ package tp2_bieres_kassab;
  * @author kassab10
  */
 public class BouteilleBiere {
-    String nom;
-    float degreAlcool ; 
+    String Nom ;
+    double degreAlcool ; 
     String brasserie ; 
+    boolean ouverte ; 
+
     
-    
+    public BouteilleBiere(String unNom, double unDegre, String uneBrasserie) {
+ Nom = unNom;
+ degreAlcool = unDegre;
+ brasserie = uneBrasserie;
+ ouverte = false;
 }
+    
+public void lireEtiquette() {
+    System.out.println("Bouteille de " + Nom +" (" + degreAlcool + " degres) \nBrasserie : " + brasserie ) ;     
+    }
+public void Decapsuler () {
+    if (ouverte == false) {
+        
+}        
+    
+} 
+
+}
+
+
+
