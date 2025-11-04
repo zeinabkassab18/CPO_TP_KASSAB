@@ -14,23 +14,16 @@ public class TP2_Bieres_KASSAB {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        BouteilleBiere uneBiere = new BouteilleBiere() ;
-        uneBiere.Nom = "Cuvée des Trolls";
-        uneBiere.degreAlcool = 7.0 ;
-        uneBiere.brasserie = "Dubuisson" ;
-        uneBiere.ouverte = false ;
+        BouteilleBiere uneBiere = new BouteilleBiere ("Cuvée des Trolls" , 7.0 , "Dubuisson" ) ;
+        BouteilleBiere Biere2 = new BouteilleBiere ("Leffe" , 6.6 , "Abbaye de Leffe") ; 
+        BouteilleBiere Biere3 = new BouteilleBiere ("Ciel " , 6.8 , "Bordeaux" ) ;
+        BouteilleBiere Biere4 = new BouteilleBiere ("Amour" , 6.0 , "Provence" ) ; 
+        BouteilleBiere Biere5 = new BouteilleBiere ("jeu" , 8.0 , "Marseille") ;
         uneBiere.lireEtiquette();
-        
-        
-        
-        
-        BouteilleBiere Biere2 = new BouteilleBiere () ; 
-        Biere2.Nom = "Leffe" ; 
-        Biere2.degreAlcool = 6.6 ; 
-        Biere2.brasserie = "Abbaye de Leffe" ; 
-        Biere2.ouverte = false ; 
-        Biere2.lireEtiquette();       
-        // TODO code application logic here
+        Biere2.lireEtiquette();
+        Biere3.lireEtiquette();
+        Biere4.lireEtiquette();
+        Biere5.lireEtiquette() ;
+        System.out.println (uneBiere) ; 
     }
-    
-}
+    }
