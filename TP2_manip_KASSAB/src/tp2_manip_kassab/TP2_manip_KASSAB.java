@@ -34,12 +34,12 @@ public class TP2_manip_KASSAB {
         // Creation tableau 10 colonne 
         Moussaka[] tabMoussaka = new Moussaka[10];
 
-        for (int i = 0; i < tabMoussaka.length; i++) {
+        for (int i = 0; i < 10 ; i++) {
             tabMoussaka[i] = new Moussaka(300 + i * 10);
         }
 
         System.out.println("\nAffichage des Moussaka :");
-        for (int i = 0; i < tabMoussaka.length; i++) {
+        for (int i = 0; i < 10; i++) {
             System.out.println("Moussaka n°" + (i + 1) + " : " + tabMoussaka[i].nbCalories + " kcal");
         }
     }
