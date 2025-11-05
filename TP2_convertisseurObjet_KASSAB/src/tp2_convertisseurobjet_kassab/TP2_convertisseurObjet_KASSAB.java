@@ -4,6 +4,8 @@
  */
 package tp2_convertisseurobjet_kassab;
 
+import java.util.Scanner;
+
 /**
  *
  * @author kassab10
@@ -14,21 +16,53 @@ public class TP2_convertisseurObjet_KASSAB {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Convertisseur c1 = new Convertisseur();
-        Convertisseur c2 = new Convertisseur();
+        Convertisseur conv = new Convertisseur();
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Bonjour, saisissez une valeur : ");
+        double valeur = sc.nextDouble();
 
-        float k = c1.CelciusVersKelvin(25f);
-        float f = c1.CelciusVersFarenheit(0f);
-        System.out.println("25°C -> " + k + " K");
-        System.out.println("0°C -> " + f + " °F");
-        System.out.println(c1);  
+        System.out.println("\nChoisissez la conversion à effectuer :");
+        System.out.println("1) Celsius vers Kelvin");
+        System.out.println("2) Kelvin vers Celsius");
+        System.out.println("3) Celsius vers Fahrenheit");
+        System.out.println("4) Fahrenheit vers Celsius");
+        System.out.println("5) Kelvin vers Fahrenheit");
+        System.out.println("6) Fahrenheit vers Kelvin");
 
-        float c = c2.FarenheitVersCelcius(212f);
-        float f2 = c2.KelvinVersFarenheit(300f);
-        System.out.println("212°F -> " + c + " °C");
-        System.out.println("300 K -> " + f2 + " °F");
-        System.out.println(c2);  
+        int choix = sc.nextInt();
+        double resultat = 0;
+
+        switch (choix) {
+            case 1:
+                resultat = conv.CelciusVersKelvin(valeur);
+                break;
+            case 2:
+                resultat = conv.KelvinVersCelcius(valeur);
+                break;
+            case 3:
+                resultat = conv.CelciusVersFarenheit(valeur);
+                break;
+            case 4:
+                resultat = conv.FarenheitVersCelcius(valeur);
+                break;
+            case 5:
+                resultat = conv.KelvinVersFarenheit(valeur);
+                break;
+            case 6:
+                resultat = conv.FarenheitVersKelvin(valeur);
+                break;
+            default:
+                System.out.println("Choix invalide !");
+                sc.close();
+                return;
+        }
+
+        System.out.println("\nRésultat de la conversion : " + resultat);
+        System.out.println(conv); // affiche le nb de conversions
+        sc.close();
     }
 }
+
     
     
