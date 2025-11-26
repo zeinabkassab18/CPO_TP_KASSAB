@@ -95,10 +95,10 @@ public class FenetreQuizz extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        question.setFont(new java.awt.Font("Lucida Grande", 3, 48)); // NOI18N
+        question.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         question.setForeground(new java.awt.Color(0, 153, 153));
         question.setText("Question");
-        getContentPane().add(question, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 17, 237, -1));
+        getContentPane().add(question, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 70, 280, 60));
 
         bouton1.setFont(new java.awt.Font("Kohinoor Bangla", 1, 14)); // NOI18N
         bouton1.setForeground(new java.awt.Color(0, 102, 204));
@@ -108,7 +108,7 @@ public class FenetreQuizz extends javax.swing.JFrame {
                 bouton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(bouton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 122, 134, 34));
+        getContentPane().add(bouton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 134, 30));
 
         bouton2.setFont(new java.awt.Font("Kohinoor Bangla", 3, 14)); // NOI18N
         bouton2.setForeground(new java.awt.Color(0, 102, 204));
@@ -118,7 +118,7 @@ public class FenetreQuizz extends javax.swing.JFrame {
                 bouton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(bouton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 122, 134, 34));
+        getContentPane().add(bouton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 170, 134, 30));
 
         bouton3.setFont(new java.awt.Font("Kohinoor Bangla", 1, 14)); // NOI18N
         bouton3.setForeground(new java.awt.Color(0, 102, 204));
@@ -128,7 +128,7 @@ public class FenetreQuizz extends javax.swing.JFrame {
                 bouton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(bouton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 177, 134, -1));
+        getContentPane().add(bouton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 170, 134, -1));
 
         bouton4.setFont(new java.awt.Font("Kohinoor Bangla", 1, 14)); // NOI18N
         bouton4.setForeground(new java.awt.Color(0, 102, 204));
@@ -138,15 +138,15 @@ public class FenetreQuizz extends javax.swing.JFrame {
                 bouton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(bouton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 174, 134, 34));
+        getContentPane().add(bouton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 170, 134, 30));
 
-        message.setFont(new java.awt.Font("Kohinoor Bangla", 3, 24)); // NOI18N
+        message.setFont(new java.awt.Font("Kohinoor Bangla", 3, 18)); // NOI18N
         message.setForeground(new java.awt.Color(0, 153, 51));
         message.setText("Bonne réponse");
-        getContentPane().add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 245, 182, -1));
+        getContentPane().add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 210, 70));
 
-        Score.setFont(new java.awt.Font("Kohinoor Bangla", 1, 24)); // NOI18N
-        Score.setForeground(new java.awt.Color(255, 102, 0));
+        Score.setFont(new java.awt.Font("Kohinoor Bangla", 1, 12)); // NOI18N
+        Score.setForeground(new java.awt.Color(204, 204, 204));
         Score.setText("Score ");
         getContentPane().add(Score, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 57, 89, 47));
 
@@ -158,7 +158,7 @@ public class FenetreQuizz extends javax.swing.JFrame {
                 suivantActionPerformed(evt);
             }
         });
-        getContentPane().add(suivant, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 300, -1, -1));
+        getContentPane().add(suivant, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 330, -1, 100));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -195,12 +195,10 @@ public class FenetreQuizz extends javax.swing.JFrame {
     
         suivant.setEnabled(false);
     }
-
-
     }//GEN-LAST:event_suivantActionPerformed
 
     private void bouton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton4ActionPerformed
-        verifierReponse(4);
+        verifierReponse(4);   
     }//GEN-LAST:event_bouton4ActionPerformed
 
     /**
@@ -239,4 +237,4 @@ public class FenetreQuizz extends javax.swing.JFrame {
     private javax.swing.JLabel question;
     private javax.swing.JButton suivant;
     // End of variables declaration//GEN-END:variables
-
+}
