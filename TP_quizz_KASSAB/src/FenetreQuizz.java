@@ -16,20 +16,60 @@ public class FenetreQuizz extends javax.swing.JFrame {
     
     private ArrayList<Questions> listQuestions = new ArrayList<> () ; 
     private int indexQuestionsCourante = 0 ; 
-    private int Score = 0 ; 
+    private int score = 0 ; 
     /**
      * Creates new form FenetreQuizz
      */
     public FenetreQuizz() {
         initComponents();
-        Score.setText ("Score : " + Score) ; 
+        Score.setText("Score : " + Score);
         //Questions :
         listQuestions.add(new Questions (" Combien font 2 + 2 ?", "1" , "2" , "3" , "4", 4));
         listQuestions.add(new Questions ("Quelle est la capitale du Liban ? " , "Abidjan" , "Beirut" , "Paris" , "Caire",2)) ;
         listQuestions.add(new Questions ("Combien de saisons il y'a ? " , "1" , "5" , "4" , "2",3)) ;
         listQuestions.add(new Questions ("Quelle est la couleur du soleil ? " , "Jaune" , "Bleu" , "Gris" , "Vert",1)) ;
         listQuestions.add(new Questions ("Combien de jours dans la semaine ? " , "4" , "7" , "9" , "10",2)) ;
+    }  
+    private void afficherQuestionCourante() {
+
+   Questions q = listQuestions.get(indexQuestionsCourante);
+
+    question.setText(q.getIntitule());
+
+    bouton1.setText(q.getProposition1());
+    bouton2.setText(q.getProposition2());
+    bouton3.setText(q.getProposition3());
+    bouton4.setText(q.getProposition4());
+
+    bouton1.setEnabled(true);
+    bouton2.setEnabled(true);
+    bouton3.setEnabled(true);
+    bouton4.setEnabled(true);
+
+    message.setText("");    
+}
+    private void verifierReponse(int choix) {
+
+    Questions q = listQuestions.get(indexQuestionsCourante);
+
+    // Vérifier la réponse
+    if (choix == q.getIndexBonneReponse()) {
+        message.setText("Bonne réponse !");
+        score++;  // incrémente ton score
+        Score.setText("Score : " + score);
+    } 
+    else {
+        message.setText("Mauvaise réponse !");
     }
+
+    // Désactiver les boutons pour empêcher de cliquer encore
+    bouton1.setEnabled(false);
+    bouton2.setEnabled(false);
+    bouton3.setEnabled(false);
+    bouton4.setEnabled(false);
+}
+
+        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -124,23 +164,43 @@ public class FenetreQuizz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void bouton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton1ActionPerformed
-        // TODO add your handling code here:
+        verifierReponse(1);
     }//GEN-LAST:event_bouton1ActionPerformed
 
     private void bouton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton2ActionPerformed
-        // TODO add your handling code here:
+        verifierReponse(2);
     }//GEN-LAST:event_bouton2ActionPerformed
 
     private void bouton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton3ActionPerformed
-        // TODO add your handling code here:
+        verifierReponse(3);
     }//GEN-LAST:event_bouton3ActionPerformed
 
     private void suivantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suivantActionPerformed
-        // TODO add your handling code here:
+
+    indexQuestionsCourante++;
+
+    if (indexQuestionsCourante < listQuestions.size()) {
+
+        afficherQuestionCourante();
+    } 
+    else {
+        question.setText("Quiz terminé !");
+        message.setText("Score final : " + score + " / " + listQuestions.size());
+
+        bouton1.setEnabled(false);
+        bouton2.setEnabled(false);
+        bouton3.setEnabled(false);
+        bouton4.setEnabled(false);
+
+    
+        suivant.setEnabled(false);
+    }
+
+
     }//GEN-LAST:event_suivantActionPerformed
 
     private void bouton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton4ActionPerformed
-        // TODO add your handling code here:
+        verifierReponse(4);
     }//GEN-LAST:event_bouton4ActionPerformed
 
     /**
@@ -179,4 +239,4 @@ public class FenetreQuizz extends javax.swing.JFrame {
     private javax.swing.JLabel question;
     private javax.swing.JButton suivant;
     // End of variables declaration//GEN-END:variables
-}
+
