@@ -28,7 +28,7 @@ public class FenetreQuizz extends javax.swing.JFrame {
         listQuestions.add(new Questions ("Quelle est la capitale du Liban ? " , "Abidjan" , "Beirut" , "Paris" , "Caire",2)) ;
         listQuestions.add(new Questions ("Combien de saisons il y'a ? " , "1" , "5" , "4" , "2",3)) ;
         listQuestions.add(new Questions ("Quelle est la couleur du soleil ? " , "Jaune" , "Bleu" , "Gris" , "Vert",1)) ;
-        
+        listQuestions.add(new Questions ("Combien de jours dans la semaine ? " , "4" , "7" , "9" , "10",2)) ;
     }
 
     /**
@@ -62,7 +62,7 @@ public class FenetreQuizz extends javax.swing.JFrame {
 
         bouton1.setFont(new java.awt.Font("Kohinoor Bangla", 1, 14)); // NOI18N
         bouton1.setForeground(new java.awt.Color(0, 102, 204));
-        bouton1.setText("btnrep1");
+        bouton1.setText("1");
         bouton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bouton1ActionPerformed(evt);
@@ -72,7 +72,7 @@ public class FenetreQuizz extends javax.swing.JFrame {
 
         bouton2.setFont(new java.awt.Font("Kohinoor Bangla", 3, 14)); // NOI18N
         bouton2.setForeground(new java.awt.Color(0, 102, 204));
-        bouton2.setText("btnrep2");
+        bouton2.setText("2");
         bouton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bouton2ActionPerformed(evt);
@@ -82,7 +82,7 @@ public class FenetreQuizz extends javax.swing.JFrame {
 
         bouton3.setFont(new java.awt.Font("Kohinoor Bangla", 1, 14)); // NOI18N
         bouton3.setForeground(new java.awt.Color(0, 102, 204));
-        bouton3.setText("btnrep3");
+        bouton3.setText("3");
         bouton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bouton3ActionPerformed(evt);
@@ -92,7 +92,7 @@ public class FenetreQuizz extends javax.swing.JFrame {
 
         bouton4.setFont(new java.awt.Font("Kohinoor Bangla", 1, 14)); // NOI18N
         bouton4.setForeground(new java.awt.Color(0, 102, 204));
-        bouton4.setText("btnrep4");
+        bouton4.setText("4");
         bouton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bouton4ActionPerformed(evt);
