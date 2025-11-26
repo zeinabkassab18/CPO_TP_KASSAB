@@ -1,3 +1,6 @@
+
+import java.util.ArrayList;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -10,12 +13,22 @@
 public class FenetreQuizz extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FenetreQuizz.class.getName());
-
+    
+    private ArrayList<Questions> listQuestions = new ArrayList<> () ; 
+    private int indexQuestionsCourante = 0 ; 
+    private int Score = 0 ; 
     /**
      * Creates new form FenetreQuizz
      */
     public FenetreQuizz() {
         initComponents();
+        Score.setText ("Score : " + Score) ; 
+        //Questions :
+        listQuestions.add(new Questions (" Combien font 2 + 2 ?", "1" , "2" , "3" , "4", 4));
+        listQuestions.add(new Questions ("Quelle est la capitale du Liban ? " , "Abidjan" , "Beirut" , "Paris" , "Caire",2)) ;
+        listQuestions.add(new Questions ("Combien de saisons il y'a ? " , "1" , "5" , "4" , "2",3)) ;
+        listQuestions.add(new Questions ("Quelle est la couleur du soleil ? " , "Jaune" , "Bleu" , "Gris" , "Vert",1)) ;
+        
     }
 
     /**
@@ -27,69 +40,108 @@ public class FenetreQuizz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         question = new javax.swing.JLabel();
         bouton1 = new javax.swing.JButton();
         bouton2 = new javax.swing.JButton();
         bouton3 = new javax.swing.JButton();
         bouton4 = new javax.swing.JButton();
         message = new javax.swing.JLabel();
+        Score = new javax.swing.JLabel();
+        suivant = new javax.swing.JButton();
+
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        question.setFont(new java.awt.Font("Gill Sans", 1, 18)); // NOI18N
+        question.setFont(new java.awt.Font("Lucida Grande", 3, 48)); // NOI18N
+        question.setForeground(new java.awt.Color(0, 153, 153));
         question.setText("Question");
+        getContentPane().add(question, new org.netbeans.lib.awtextra.AbsoluteConstraints(169, 17, 237, -1));
 
+        bouton1.setFont(new java.awt.Font("Kohinoor Bangla", 1, 14)); // NOI18N
+        bouton1.setForeground(new java.awt.Color(0, 102, 204));
         bouton1.setText("btnrep1");
+        bouton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bouton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bouton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 122, 134, 34));
 
+        bouton2.setFont(new java.awt.Font("Kohinoor Bangla", 3, 14)); // NOI18N
+        bouton2.setForeground(new java.awt.Color(0, 102, 204));
         bouton2.setText("btnrep2");
+        bouton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bouton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bouton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 122, 134, 34));
 
+        bouton3.setFont(new java.awt.Font("Kohinoor Bangla", 1, 14)); // NOI18N
+        bouton3.setForeground(new java.awt.Color(0, 102, 204));
         bouton3.setText("btnrep3");
+        bouton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bouton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bouton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(89, 177, 134, -1));
 
+        bouton4.setFont(new java.awt.Font("Kohinoor Bangla", 1, 14)); // NOI18N
+        bouton4.setForeground(new java.awt.Color(0, 102, 204));
         bouton4.setText("btnrep4");
+        bouton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bouton4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bouton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 174, 134, 34));
 
+        message.setFont(new java.awt.Font("Kohinoor Bangla", 3, 24)); // NOI18N
+        message.setForeground(new java.awt.Color(0, 153, 51));
         message.setText("Bonne réponse");
+        getContentPane().add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 245, 182, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(question))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(bouton2)
-                            .addComponent(bouton1)
-                            .addComponent(bouton4)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(bouton3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                                .addComponent(message)))))
-                .addGap(32, 32, 32))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(question)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                .addComponent(bouton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bouton2)
-                .addGap(7, 7, 7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bouton3)
-                    .addComponent(message))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(bouton4)
-                .addGap(18, 18, 18))
-        );
+        Score.setFont(new java.awt.Font("Kohinoor Bangla", 1, 24)); // NOI18N
+        Score.setForeground(new java.awt.Color(255, 102, 0));
+        Score.setText("Score ");
+        getContentPane().add(Score, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 57, 89, 47));
+
+        suivant.setFont(new java.awt.Font("Kohinoor Bangla", 1, 24)); // NOI18N
+        suivant.setForeground(new java.awt.Color(153, 153, 0));
+        suivant.setText("Question suivante");
+        suivant.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                suivantActionPerformed(evt);
+            }
+        });
+        getContentPane().add(suivant, new org.netbeans.lib.awtextra.AbsoluteConstraints(137, 300, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bouton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bouton1ActionPerformed
+
+    private void bouton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bouton2ActionPerformed
+
+    private void bouton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bouton3ActionPerformed
+
+    private void suivantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suivantActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_suivantActionPerformed
+
+    private void bouton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bouton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,11 +169,14 @@ public class FenetreQuizz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Score;
     private javax.swing.JButton bouton1;
     private javax.swing.JButton bouton2;
     private javax.swing.JButton bouton3;
     private javax.swing.JButton bouton4;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel message;
     private javax.swing.JLabel question;
+    private javax.swing.JButton suivant;
     // End of variables declaration//GEN-END:variables
 }
