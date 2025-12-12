@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -325,14 +328,22 @@ essai[2] = Integer.parseInt(text_chiffre_2.getText());
 essai[3] = Integer.parseInt(text_chiffre_3.getText());
 
 int[] resultat = jeu.verifierEssai(essai);
+
 if (resultat != null) {
-    if (resultat != null) {
     text_nb_chiffres_exacts.setText(String.valueOf(resultat[0]));
     text_nb_chiffres_haut.setText(String.valueOf(resultat[1]));
     text_nb_chiffre_bas.setText(String.valueOf(resultat[2]));
     text_tentatives.setText(jeu.getTentativesRestantes() + " / 10");
 }
+
+if (jeu.isPartieGagnee()) {
+    JOptionPane.showMessageDialog(this, "🎉 Bravo, code trouvé !");
 }
+
+if (jeu.isPartieTerminee() && !jeu.isPartieGagnee()) {
+    JOptionPane.showMessageDialog(this, "❌ Perdu !");
+}
+
  
     }//GEN-LAST:event_bouton_testerActionPerformed
 
