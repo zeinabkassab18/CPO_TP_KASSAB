@@ -8,6 +8,7 @@
  * @author kassab10
  */
 public class graphique1 extends javax.swing.JFrame {
+    private Combinaisons jeu;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(graphique1.class.getName());
 
@@ -16,6 +17,8 @@ public class graphique1 extends javax.swing.JFrame {
      */
     public graphique1() {
         initComponents();
+        jeu = new Combinaisons();
+
     }
 
     /**
@@ -332,7 +335,15 @@ public class graphique1 extends javax.swing.JFrame {
     }//GEN-LAST:event_bouton_recommencerActionPerformed
 
     private void bouton_testerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bouton_testerActionPerformed
-        // TODO add your handling code here:
+ int[] essai = new int[4];
+
+essai[0] = Integer.parseInt(text_chiffre_0.getText());
+essai[1] = Integer.parseInt(text_chiffre_1.getText());
+essai[2] = Integer.parseInt(text_chiffre_2.getText());
+essai[3] = Integer.parseInt(text_chiffre_3.getText());
+
+int[] resultat = jeu.verifierEssai(essai);
+
     }//GEN-LAST:event_bouton_testerActionPerformed
 
     /**
